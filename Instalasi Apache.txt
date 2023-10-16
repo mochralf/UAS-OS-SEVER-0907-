@@ -1,0 +1,16 @@
+# sudo apt update
+# sudo apt install apache2
+# sudo mkdir /var/www/gci/
+# cd /var/www/gci/
+# nano index.html
+# cd /var/www/gci/
+# nano index.html
+<html>
+<head>
+  <title> Ubuntu rocks! </title>
+</head>
+<body>
+  <p> I'm running this website on an Ubuntu Server server!
+</body>
+</html>
+# cd /etc/apache2/sites-available/
