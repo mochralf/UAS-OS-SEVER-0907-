@@ -5,7 +5,7 @@ Repository ini berisikan dokumentasi yang menjelaskan tahapan dalam instalasi da
 
 ## Daftar Isi
 
- - [Instalasi dan Konfigurasi SSH]([https://awesomeopensource.com/project/elangosundar/awesome-README-templates](https://github.com/mochralf/UAS-OS-SEVER-0907-/blob/master/README.md#instalasi-dan-konfigurasi-web-server))
+ - [Instalasi dan Konfigurasi SSH](https://github.com/mochralf/UAS-OS-SEVER-0907-/blob/master/README.md#instalasi-dan-konfigurasi-web-server)
  - [Instalasi dan Konfigurasi Web Server](https://github.com/matiassingers/awesome-readme)
  - [Instalasi dan Konfigurasi Monitoring Server](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
