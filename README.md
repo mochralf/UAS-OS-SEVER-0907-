@@ -132,7 +132,7 @@ Aktifkan file Host virtual baru dengan alat a2ensite
 
 Nonaktifkan  situs default yang ditentukan di 000-default.conf
 ```bash
-  sudo a3dissite 000-default.conf
+  sudo a2dissite 000-default.conf
 ```
 
 Uji konfigurasi Apache barangkali terjadi kesalahan
