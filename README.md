@@ -1,5 +1,5 @@
 
-# Final Project OS-Server (22.83.0907)
+# Final Project OS-Server (Rafli Ilham Prasetyo - 22.83.0907)
 
 Repositori ini berisikan dokumentasi yang menjelaskan tahapan dalam instalasi dan juga konfigurasi Web Server dengan menambahkan Software Opensource sebagai pemonitoringnya pada Ubuntu Server 22.04 LTS.
 
