@@ -192,6 +192,25 @@ Lalu pindahkan juga file yang berisi Konfigurasi pada console_libraries, console
 Buatkan direktori khusus service daemon agar Prometheus dapat hidup secara otomatis ketika VM dihidupkan atau di Restart (berjalan dibelakang layar)
 ```bash
   sudo mkdir /etc/systemd/system/prometheus.service
+  #Masukkan konfigurasi berikut :
+  [Unit]
+  Description=Prometheus
+  Documentation=https://prometheus.io/docs/introduction/overview/
+  Wants=network-online.target
+  After=network-online.target
+
+  [Service]
+  User=prometheus
+  Group=prometheus
+  Type=simple
+  ExecStart=/usr/local/bin/prometheus \
+  --config.file /etc/prometheus/prometheus.yml \
+  --storage.tsdb.path /var/lib/prometheus/ \
+  --web.console.templates=/etc/prometheus/consoles \
+  --web.console.libraries=/etc/prometheus/console_libraries
+
+  [Install]
+  WantedBy=multi-user.target
 ```
 
 Aktifkan status service Prometheus
@@ -207,6 +226,12 @@ Untuk mengecek Prometheus berjalan pada port berapa, kita bisa menggunkan perint
 Untuk menambahkan job desk atau tugas terutama pada exporter nantinya akan dilakukan di dalam file konfigurasi prometheus.yml
 ```bash
   sudo nano /etc/prometheus/prometheus.yml
+  #ubahlah agar simple menjadi :
+  scrape_configs:
+  -job_name : "prometheus"
+    static_configs:
+    - targets : ["localhost:9090"]
+
 ```
 
 Ubahlah permission user dan group prometheus yang ditambhkan pada direktori "/var/lib", yang semula masih root
@@ -214,3 +239,5 @@ Ubahlah permission user dan group prometheus yang ditambhkan pada direktori "/va
   cd /var/lib
   sudo chown -R prometheus:prometheus /var/lib/prometheus
 ```
+
+Instal Exporter (Node Exporter) yang berfungsi untuk mmengukur berbagai sumber daya mesin seperti memori, disk, penggunaan CPU, dll.
